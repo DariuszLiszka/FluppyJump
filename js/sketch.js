@@ -67,7 +67,7 @@ function submitValue(score) {
     );
   }
   async function getData() {
-    console.log('xD');
+    
     return ApiUtils.getData('http://localhost:3000/api/highscore');
   }
 }
