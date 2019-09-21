@@ -4,14 +4,11 @@ const router = express.Router();
 const highscoreValidator = require('../validators/highscore');
 const { create, read } = require('../handlers/highscore');
 const createValidateMiddleware = require('../middlewares/validate');
-__dirname = 'C:/Users/Dariusz/PhaserGame';
 
-router.use(express.static(__dirname));
-router.get('/', (req, res) => res.sendFile(__dirname + 'index.html'));
-console.log(__dirname, 'xd');
+// api prefix should be in upper level
 router.get(
   '/api/highscore',
-  createValidateMiddleware(highscoreValidator.read),
+  createValidateMiddleware(highscoreValidator.read),  // you dont need validation for READ
   read
 );
 router.post(

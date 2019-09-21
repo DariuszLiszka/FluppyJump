@@ -7,7 +7,7 @@ const highscoreValidator = {
       score: Joi.number().required()
     })
   }),
-  read: Joi.object()
+  read: Joi.object()  // you dont need this
 };
 
 module.exports = highscoreValidator;
